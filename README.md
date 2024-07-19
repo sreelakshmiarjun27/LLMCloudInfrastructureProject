@@ -1,5 +1,5 @@
 ## Description
-This Python program interacts with the OpenAI GPT-4o model using the Chat Completion endpoint to generate conversational responses based on a prompt provided by the user.
+The Open AI Python program interacts with the OpenAI GPT-4o model using the Chat Completion endpoint to generate conversational responses based on a prompt provided by the user.
 
 ## Prerequisites
 - Visual Studio Code
