@@ -1,6 +1,5 @@
 import streamlit as st
 from PIL import Image
-import io
 from app import get_answer, preprocess_text
 
 # Streamlit app
