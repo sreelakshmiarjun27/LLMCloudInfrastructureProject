@@ -9,8 +9,7 @@ import nltk
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
+
 
 # Download necessary NLTK data
 nltk.download('punkt')
@@ -44,7 +43,7 @@ langchain_chroma = Chroma(
 retriever = langchain_chroma.as_retriever(search_kwargs={"k": 5})  # Fetch the top 5 relevant chunks
 
 # Initialize the language model
-llm = ChatOpenAI(model_name="gpt-4", temperature=0)
+llm = ChatOpenAI(model_name="gpt-4o")
 
 # Create a custom prompt template
 prompt_template = """
