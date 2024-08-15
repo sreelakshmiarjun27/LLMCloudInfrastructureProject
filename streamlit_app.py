@@ -1,5 +1,4 @@
 import streamlit as st
-from PIL import Image
 from app import get_answer, preprocess_text
 
 # Streamlit app
@@ -31,10 +30,10 @@ st.markdown("""
 st.title("☁️ Cloud Chatbot")
 st.markdown("### Welcome! I'm your friendly cloud chatbot, here to assist you with cloud infrastructure details.")
 
-# User input
+# User input for chatbot
 user_question = st.text_input("What would you like to know about cloud computing?")
 
-# Ask button
+# Ask button for chatbot
 if st.button("Ask"):
     if user_question:
         answer, relevant_chunk = get_answer(user_question)
@@ -53,15 +52,33 @@ if st.button("Ask"):
     else:
         st.warning("Please enter a question before clicking Ask.")
 
-# File uploader for images and PDFs
-uploaded_file = st.file_uploader("Upload an image or PDF related to your question", type=["jpg", "jpeg", "png", "pdf"])
+# Cloud Cost Calculator
+st.markdown("### Cloud Cost Estimator")
+service_type = st.selectbox("Select the cloud service type:", ["Compute", "Storage", "Data Transfer"])
+usage_hours = st.number_input("Enter usage hours (per month):", min_value=0)
+data_transfer_gb = st.number_input("Enter data transfer (GB per month):", min_value=0)
 
-if uploaded_file is not None:
-    if uploaded_file.type.startswith('image'):
-        image = Image.open(uploaded_file)
-        st.image(image, caption='Uploaded Image', use_column_width=True)
-    elif uploaded_file.type == 'application/pdf':
-        st.success(f"PDF file '{uploaded_file.name}' uploaded successfully!")
+# Adjusted Pricing (Example prices in pounds)
+pricing = {
+    "Compute": 0.04,  # Price per hour in pounds
+    "Storage": 0.014,  # Price per GB in pounds
+    "Data Transfer": 0.018  # Price per GB in pounds
+}
+
+# Calculate button
+if st.button("Calculate Cost"):
+    if usage_hours or data_transfer_gb:
+        total_cost = 0
+        if service_type == "Compute":
+            total_cost = usage_hours * pricing["Compute"]
+        elif service_type == "Storage":
+            total_cost = data_transfer_gb * pricing["Storage"]
+        elif service_type == "Data Transfer":
+            total_cost = data_transfer_gb * pricing["Data Transfer"]
+        
+        st.success(f"Estimated Cost for {service_type} service: £{total_cost:.2f} per month")
+    else:
+        st.warning("Please enter usage hours or data transfer amount.")
 
 # Rating button
 rating = st.slider("Rate your experience:", 1, 5, 3)
