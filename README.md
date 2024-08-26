@@ -24,12 +24,12 @@ This project implements a chatbot designed to answer queries about cloud usage, 
 7. User Interface: Responses are displayed through a Streamlit-based interface.
 
 ## Modules
-metrics.py: Contains functions for asking questions, computing evaluation metrics (accuracy, confidence score, context relevance, answer conciseness, response time), and saving results in JSON format.
-plot_performance.py: Generates radar charts to visualize performance metrics saved in JSON format. It creates visual representations of user evaluation metrics to assess chatbot performance.
-model_evaluation.py: Evaluates different models against a set of predefined questions to analyze response time, tokens used, and response length. This module provides comparative analysis of various language models.
-plot.py: Loads the evaluation results and plots average metrics for different models using bar graphs, helping visualize differences in performance.
-without_RAG.py: Implements a non-RAG chatbot that uses basic input-output processing without external retrieval systems. It includes text preprocessing capabilities to improve input handling.
-compare_chatbots.py: Compares the performance of RAG-based and non-RAG chatbots, calculating the BLEU score to measure response similarity and timing for both approaches.
+1.metrics.py: Contains functions for asking questions, computing evaluation metrics (accuracy, confidence score, context relevance, answer conciseness, response time), and saving results in JSON format.
+2.plot_performance.py: Generates radar charts to visualize performance metrics saved in JSON format. It creates visual representations of user evaluation metrics to assess chatbot performance.
+3.model_evaluation.py: Evaluates different models against a set of predefined questions to analyze response time, tokens used, and response length. This module provides comparative analysis of various language models.
+4.plot.py: Loads the evaluation results and plots average metrics for different models using bar graphs, helping visualize differences in performance.
+5.without_RAG.py: Implements a non-RAG chatbot that uses basic input-output processing without external retrieval systems. It includes text preprocessing capabilities to improve input handling.
+6.compare_chatbots.py: Compares the performance of RAG-based and non-RAG chatbots, calculating the BLEU score to measure response similarity and timing for both approaches.
 
 ## Requirements
 - Python 3.11.3
