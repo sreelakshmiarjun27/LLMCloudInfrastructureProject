@@ -26,11 +26,11 @@ def compare_models(questions, models):
     return results
 
 if __name__ == "__main__":
-    models = ["gpt-3-davinci", "gpt-4o"]
+    models = ["gpt-4o","text-davinci-003","text-davinci-002"]
     questions = [
         "What is the meter name for the service being charged?",
         "In which region is the meter located?",
-        "What is the effective price for the service period?"
+        "What is the  price for the service period?"
     ]
     
     results = compare_models(questions, models)
