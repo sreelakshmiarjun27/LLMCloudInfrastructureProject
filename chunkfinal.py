@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Jul 20 15:10:59 2024
-
-@author: Sreelakshmi
-"""
 
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 import json
