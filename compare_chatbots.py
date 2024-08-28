@@ -1,4 +1,4 @@
-import app as rag_chatbot  # Your existing RAG-based chatbot
+import app as rag_chatbot  # existing RAG-based chatbot
 import importlib
 non_rag_chatbot = importlib.import_module("without RAG")  # The new non-RAG chatbot
 from nltk.translate.bleu_score import sentence_bleu
